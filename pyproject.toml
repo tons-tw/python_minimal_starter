@@ -1,0 +1,35 @@
+[project]
+name = "tons-tw-python-minimal-starter"
+version = "0.1.0"
+description = "THIS IS THE WAY!"
+readme = "README.md"
+license = "MIT"
+authors = [
+  { name = "CHANG, TZU-YEN", email = "tom@tons.tw" },
+]
+requires-python = "==3.13.*"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+  "pyproject-fmt>=2.11.1",
+  "ruff>=0.14.10",
+]
+
+[tool.ruff]
+line-length = 80
+indent-width = 2
+format.line-ending = "lf"
+format.docstring-code-format = true
+lint.extend-select = [
+  "I",
+]
+
+[tool.pyproject-fmt]
+column_width = 80
+indent = 2
