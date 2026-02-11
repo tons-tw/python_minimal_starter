@@ -1,0 +1,54 @@
+[project]
+name = "tons-tw-python-minimal-starter"
+version = "0.1.0"
+description = "THIS IS THE WAY!"
+readme = "README.md"
+license = "MIT"
+authors = [
+  { name = "CHANG, TZU-YEN", email = "tom@tons.tw" },
+]
+requires-python = "==3.13.*"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.13",
+]
+
+[dependency-groups]
+dev = [
+  "pyproject-fmt~=2.15.3",
+  "pytest~=9.0.2",
+  "pytest-cov~=7.0.0",
+  "ruff>=0.15.2",
+]
+
+[tool.ruff]
+line-length = 80
+indent-width = 2
+format.line-ending = "lf"
+format.docstring-code-format = true
+lint.extend-select = [
+  "B",   # common bugs
+  "C4",  # better comprehensions
+  "I",   # import sorting
+  "PIE", # unnecessary code
+  "PT",  # pytest style
+  "RET", # return statements
+  "RUF", # ruff-specific rules
+  "SIM", # simplify code
+  "TCH", # type-checking imports
+  "UP",  # modern Python syntax
+]
+
+[tool.pyproject-fmt]
+column_width = 80
+indent = 2
+
+[tool.pytest]
+ini_options.python_files = [ "*_test.py" ]
+ini_options.pythonpath = [ "src" ]
+ini_options.addopts = "--cov=src --cov-report term"
+
+[tool.coverage]
+run.branch = true
+run.omit = [ "*_test.py" ]
+run.relative_files = true
